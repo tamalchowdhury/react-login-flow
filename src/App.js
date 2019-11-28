@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 // Degug mode:
@@ -35,10 +34,26 @@ class Homepage extends React.Component {
       /* Send the username and password to the backend
        * to check if the user exists
        * If the username and password combination is correct
+       * issue a new login token from the server and
        * Log the user in by setting up the state: */
-      // Pseudo login check:
+
+      // Real login, sending data to the backend api
+      fetch('/api/login', {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password }),
+        method: 'POST'
+      })
+        .then((res) => res.json())
+        .then((res) => debug(res));
+
+      // ------------------------------------
+      // Pseudo login option:
       if (username == 'admin' && password == '1234') {
         debug('Logging you in..');
+        // -------------------------------------
         this.props.storeLoginInfo(username, 'dummytoken');
       } else {
         debug('Username and or password incorect');
@@ -46,6 +61,7 @@ class Homepage extends React.Component {
         e.target.reset();
       }
     } else {
+      // Fields are missing
       // Do something about it, like display an error message or something.
       debug('Fields are missing.');
     }
