@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Bars from './Bars';
 
 // Degug mode:
 const DEBUG = true;
@@ -24,7 +25,9 @@ class Dashboard extends React.Component {
     return (
       <div>
         <h1>Dashboard - {this.state.time}</h1>
-        <div>Show some fancy things here..</div>
+        <p>Some fancy stuff goes here..</p>
+        <Bars />
+        <button onClick={this.props.logout}>Logout</button>
       </div>
     );
   }
@@ -95,10 +98,10 @@ class Homepage extends React.Component {
           <div className="register">
             <h3>Register</h3>
             <form action="">
-              <input type="text" name="username" />
-              <input type="password" name="password" />
-              <input type="password" name="password-again" />
-              <button>Register</button>
+              <input type="text" name="username" disabled />
+              <input type="password" name="password" disabled />
+              <input type="password" name="password-again" disabled />
+              <button disabled>Register</button>
             </form>
           </div>
         </div>
@@ -109,7 +112,7 @@ class Homepage extends React.Component {
 
 class App extends React.Component {
   state = {
-    loggedIn: false,
+    loggedIn: true,
     username: '',
     token: ''
   };
@@ -124,9 +127,17 @@ class App extends React.Component {
     });
   };
 
+  logout = () => {
+    this.setState({
+      loggedIn: false,
+      username: null,
+      token: null
+    });
+  };
+
   render() {
     const Page = this.state.loggedIn ? (
-      <Dashboard />
+      <Dashboard logout={this.logout} />
     ) : (
       <Homepage storeLoginInfo={this.storeLoginInfo} />
     );
