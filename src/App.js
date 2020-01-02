@@ -112,7 +112,7 @@ class Homepage extends React.Component {
 
 class App extends React.Component {
   state = {
-    loggedIn: true,
+    loggedIn: false,
     username: '',
     token: ''
   };
