@@ -8,10 +8,22 @@ function debug(...args) {
 }
 
 class Dashboard extends React.Component {
+  state = {
+    time: new Date().toLocaleTimeString()
+  };
+
+  componentDidMount() {
+    let updatedTime = this.state.time;
+    setInterval(() => {
+      updatedTime = new Date().toLocaleTimeString();
+      this.setState({ time: updatedTime });
+    }, 1000);
+  }
+
   render() {
     return (
       <div>
-        <h1>Dashboard</h1>
+        <h1>Dashboard - {this.state.time}</h1>
         <div>Show some fancy things here..</div>
       </div>
     );
@@ -51,7 +63,7 @@ class Homepage extends React.Component {
 
       // ------------------------------------
       // Pseudo login option:
-      if (username == 'admin' && password == '1234') {
+      if (username == 'admin' && password == 'admin') {
         debug('Logging you in..');
         // -------------------------------------
         this.props.storeLoginInfo(username, 'dummytoken');
