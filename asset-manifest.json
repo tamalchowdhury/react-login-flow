@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/react-login-flow/static/css/main.41c49110.chunk.css",
+    "main.js": "/react-login-flow/static/js/main.7605bcda.chunk.js",
+    "main.js.map": "/react-login-flow/static/js/main.7605bcda.chunk.js.map",
+    "runtime-main.js": "/react-login-flow/static/js/runtime-main.83ee8b6b.js",
+    "runtime-main.js.map": "/react-login-flow/static/js/runtime-main.83ee8b6b.js.map",
+    "static/js/2.0d3440b2.chunk.js": "/react-login-flow/static/js/2.0d3440b2.chunk.js",
+    "static/js/2.0d3440b2.chunk.js.map": "/react-login-flow/static/js/2.0d3440b2.chunk.js.map",
+    "index.html": "/react-login-flow/index.html",
+    "precache-manifest.2d7e4b912c7de744c8e22a3708d4b8e1.js": "/react-login-flow/precache-manifest.2d7e4b912c7de744c8e22a3708d4b8e1.js",
+    "service-worker.js": "/react-login-flow/service-worker.js",
+    "static/css/main.41c49110.chunk.css.map": "/react-login-flow/static/css/main.41c49110.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83ee8b6b.js",
+    "static/js/2.0d3440b2.chunk.js",
+    "static/css/main.41c49110.chunk.css",
+    "static/js/main.7605bcda.chunk.js"
+  ]
+}
